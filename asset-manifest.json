@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/HANIJUNI_1ST/static/css/main.d4a07acf.css",
+    "main.js": "/HANIJUNI_1ST/static/js/main.a4fe18af.js",
+    "index.html": "/HANIJUNI_1ST/index.html",
+    "main.d4a07acf.css.map": "/HANIJUNI_1ST/static/css/main.d4a07acf.css.map",
+    "main.a4fe18af.js.map": "/HANIJUNI_1ST/static/js/main.a4fe18af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4a07acf.css",
+    "static/js/main.a4fe18af.js"
+  ]
+}
