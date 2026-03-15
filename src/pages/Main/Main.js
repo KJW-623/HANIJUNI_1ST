@@ -61,13 +61,13 @@ const Main = () => {
                     {/* 1. Memories */}
                     <section className="glass-card">
                         <h4 className="card-label neon-text-pink">MEMORIES</h4>
-                        <div className="card-content neon-text-white">우리가 함께한 시간의 기억.</div>
+                        <div className="card-content neon-text-white">함께한 시간의 기억.</div>
                     </section>
 
                     {/* 2. Album */}
                     <section className="glass-card">
                         <h4 className="card-label neon-text-pink">ALBUM</h4>
-                        <div className="card-content neon-text-white">말로는 표현 못할 시간들.</div>
+                        <div className="card-content neon-text-white">순간을 기억할 찰나.</div>
                     </section>
 
                     {/* 3. Records */}
@@ -78,8 +78,8 @@ const Main = () => {
 
                     {/* 4. Anniversary */}
                     <section className="glass-card">
-                        <h4 className="card-label neon-text-pink">ANNIVERSARY</h4>
-                        <div className="card-content neon-text-white">1년의 시간동안, 우리는.</div>
+                        <h4 className="card-label neon-text-pink">Anniv.</h4>
+                        <div className="card-content neon-text-white">1년동안, 우리는.</div>
                     </section>
                 </div>
             </div>
