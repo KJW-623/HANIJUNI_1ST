@@ -115,7 +115,12 @@
 .hero-d-day {
     /* 12vw나 9rem이 높이를 밀어낼 수 있으므로 clamp 수치를 살짝 하향 */
     font-size: clamp(4rem, 10vw, 8.5rem); 
-    line-height: 0.8;
+    font-weight: 900;
+    background: linear-gradient(135deg, #fff, #ffb6c1, #a5d8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 0.85;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
 }
 
 /* 4. 하단 그리드: 높이 제한 */
