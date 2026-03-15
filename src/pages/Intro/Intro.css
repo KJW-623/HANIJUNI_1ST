@@ -1,0 +1,178 @@
+/* Intro.css */
+.intro-container {
+  height: 100vh;
+  width: 100%;
+  background: #050510; /* 더 깊은 밤하늘색 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 몽환적인 은하수 배경 (기존 코드 유지) */
+.galaxy-bg {
+  position: absolute;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.nebula-purple {
+  position: absolute;
+  top: 10%; left: 15%;
+  width: 80vw; height: 80vw;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.nebula-pink {
+  position: absolute;
+  bottom: 10%; right: 15%;
+  width: 70vw; height: 70vw;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.18) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* 별 스타일 (기존 코드 유지) */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 별똥별 스타일 (기존 코드 유지) */
+.shooting-star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: linear-gradient(90deg, #fff, transparent);
+  opacity: 0;
+  animation: shoot infinite linear;
+  z-index: 3;
+}
+
+@keyframes shoot {
+  0% { transform: rotate(315deg) translateX(0); opacity: 0; }
+  5% { opacity: 1; }
+  40% { transform: rotate(315deg) translateX(-1500px); opacity: 0; }
+  100% { transform: rotate(315deg) translateX(-1500px); opacity: 0; }
+}
+
+/* --- 콘텐츠 반응형 디자인 & 몽환적 효과 --- */
+.intro-content {
+  text-align: center;
+  z-index: 10;
+  color: white;
+  padding: 0 5vw; /* 모바일 양옆 여백 */
+  width: 100%;
+}
+
+/* 1. 메인 타이틀: 몽환적 그라데이션 + 스파클 애니메이션 */
+.main-title.dreaming-text {
+  /* 반응형 폰트: clamp(최소, 가변폭, 최대) */
+  font-size: clamp(2.5rem, 12vw, 5.8rem);
+  font-weight: 200;
+  letter-spacing: clamp(10px, 4vw, 28px);
+  /* 보라+분홍 그라데이션 폰트 */
+  background: linear-gradient(to bottom, #ffffff, #ffb6c1, #e6e6fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: clamp(15px, 3vh, 25px);
+  word-break: keep-all; /* 단어 단위 줄바꿈 */
+  text-shadow: 0 0 50px rgba(255, 182, 193, 0.6); /* 기본 글자 반짝임 */
+  animation: dreamingText 8s infinite alternate; /* 찬란한 스파클 효과 추가 */
+}
+
+/* 글자 스파클 애니메이션 정의 */
+@keyframes dreamingText {
+  0%, 100% { text-shadow: 0 0 50px rgba(255, 182, 193, 0.6); }
+  50% { text-shadow: 0 0 80px rgba(165, 216, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.8); } /* 더 찬란하게 빛남 */
+}
+
+/* 2. 구분선: 찬란한 네온 효과 */
+.divider.glow-divider {
+  width: clamp(40px, 10vw, 80px);
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+  margin: 0 auto clamp(20px, 4vh, 30px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* 3. 서브 타이틀: 잔잔한 스파클 */
+.sub-title.glittering-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: clamp(2px, 0.8vw, 4px);
+  opacity: 0.8;
+  margin-bottom: clamp(40px, 8vh, 65px);
+  line-height: 1.6;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  animation: glitteringText 6s infinite alternate;
+}
+
+@keyframes glitteringText {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; text-shadow: 0 0 25px rgba(255, 255, 255, 0.6); }
+}
+
+/* 4. 버튼: 유리 질감(Glassmorphism) + 찬란한 호버 효과 */
+.enter-btn.glass-btn {
+  /* 버튼 크기도 화면에 비례하게 */
+  padding: clamp(15px, 3.2vw, 22px) clamp(45px, 9vw, 75px);
+  background: rgba(255, 255, 255, 0.04); /* 반투명 배경 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 은은한 테두리 */
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(18px); /* 강력한 유리 질감 효과 */
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* 깊이감 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 버튼 내부 스파클 효과 (호버 시 사선으로 지나감) */
+.enter-btn.glass-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: 0.8s;
+  opacity: 0;
+}
+
+.enter-btn.glass-btn:hover::after {
+  left: 100%;
+  top: 100%;
+  opacity: 1;
+}
+
+/* 버튼 호버 최종 상태: 찬란한 발광 */
+.enter-btn.glass-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #050510;
+  box-shadow: 0 0 60px rgba(255, 182, 193, 0.9); /* 찬란한 핑크 발광 */
+  transform: translateY(-5px);
+}
+
+/* 모바일 전용 미세 조정 */
+@media (max-width: 480px) {
+  .main-title { letter-spacing: 7px; } /* 좁은 화면에선 자간 축소 */
+}
+
+.bold-name {
+  font-weight: 600; /* 아주 두껍게 설정하여 강조 */
+  /* 글자 간격이 너무 붙어 보인다면 약간의 자간 조절 */
+  letter-spacing: clamp(10px, 4vw, 25px); 
+}
