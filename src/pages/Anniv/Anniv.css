@@ -1,0 +1,109 @@
+.single-letter-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 100px;
+    z-index: 10;
+}
+
+/* 편지지 본체 */
+.letter-paper {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(255, 182, 193, 0.1);
+    animation: letterFadeIn 1.5s ease-out;
+}
+
+/* 편지지 안쪽 디자인 테두리 */
+.letter-inner-border {
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+/* [폰트 통일] 상단 To 부분 */
+.letter-header {
+    font-size: 1.8rem;
+    color: #ffb6c1;
+    /* 서술체 느낌의 폰트 패밀리 지정 */
+    font-family: 'Gowun Batang', 'Georgia', serif; 
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* 편지 본문 */
+.letter-body {
+    flex: 1;
+    font-size: 1.15rem;
+    line-height: 2.2;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    /* 본문도 부드러운 느낌으로 유지 */
+    font-family: 'Pretendard', sans-serif;
+}
+
+.letter-footer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.letter-date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+    font-family: 'Georgia', serif;
+}
+
+/* [폰트 통일] 하단 From 부분 */
+.letter-from {
+    font-size: 1.6rem; /* 헤더와 밸런스를 맞춤 */
+    color: #ffb6c1;
+    /* 헤더와 동일한 폰트 패밀리 적용 */
+    font-family: 'Gowun Batang', 'Georgia', serif; 
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* 등장 애니메이션 */
+@keyframes letterFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+/* 반응형 모바일 */
+@media (max-width: 768px) {
+    .letter-inner-border {
+        padding: 40px 20px;
+    }
+
+    .letter-body {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .letter-header {
+        font-size: 1.5rem;
+    }
+    
+    .letter-from {
+        font-size: 1.3rem;
+    }
+}

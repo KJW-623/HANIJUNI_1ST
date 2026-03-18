@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 Hook 추가
 import './Intro.css';
 
-const Intro = ({ onEnter }) => {
-  // 배경의 반짝이는 별 150개 생성 (기존 코드 유지)
-  const stars = useMemo(() => 
+const Intro = () => {
+  const navigate = useNavigate(); // 이동 함수 생성
+
+  // 배경의 반짝이는 별 150개 생성
+  const stars = useMemo(() =>
     [...Array(150)].map((_, i) => ({
       id: i,
       top: `${Math.random() * 100}%`,
@@ -13,15 +16,20 @@ const Intro = ({ onEnter }) => {
       duration: `${Math.random() * 3 + 2}s`
     })), []);
 
-  // 떨어지는 별똥별 30개 생성 (속도 2배 느리게 유지)
-  const shootingStars = useMemo(() => 
+  // 떨어지는 별똥별 30개 생성
+  const shootingStars = useMemo(() =>
     [...Array(30)].map((_, i) => ({
       id: i,
       top: `${Math.random() * 50}%`,
       left: `${Math.random() * 100}%`,
       delay: `${Math.random() * 10}s`,
-      duration: `${Math.random() * 3 + 4}s` 
+      duration: `${Math.random() * 3 + 4}s`
     })), []);
+
+  // 버튼 클릭 시 메인 페이지로 이동하는 함수
+  const handleEnter = () => {
+    navigate('/main');
+  };
 
   return (
     <div className="intro-container">
@@ -53,14 +61,16 @@ const Intro = ({ onEnter }) => {
         }} />
       ))}
 
-      {/* 콘텐츠 영역: 글자와 버튼에 몽환적 효과 집중 */}
+      {/* 콘텐츠 영역 */}
       <div className="intro-content">
         <h1 className="main-title dreaming-text">
           <span className="bold-name">HANIJUNI</span>
         </h1>
         <div className="divider glow-divider"></div>
         <p className="sub-title glittering-text">우리의 찬란한 일 년, 그 영원한 기록</p>
-        <button className="enter-btn glass-btn" onClick={onEnter}>
+
+        {/* onClick 이벤트를 handleEnter 함수에 연결 */}
+        <button className="enter-btn glass-btn" onClick={handleEnter}>
           Enter Our Universe
         </button>
       </div>

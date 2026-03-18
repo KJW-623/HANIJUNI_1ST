@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 Hook 추가
 import './Main.css';
 
 const Main = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
+    const navigate = useNavigate(); // 이동 함수 초기화
 
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -59,25 +61,25 @@ const Main = () => {
                 {/* 하단: 4분할 유리 박스 그리드 */}
                 <div className="bottom-grid">
                     {/* 1. Memories */}
-                    <section className="glass-card">
+                    <section className="glass-card" onClick={() => navigate('/memories')}>
                         <h4 className="card-label neon-text-pink">MEMORIES</h4>
                         <div className="card-content neon-text-white">함께한 시간의 기억.</div>
                     </section>
 
                     {/* 2. Album */}
-                    <section className="glass-card">
+                    <section className="glass-card" onClick={() => navigate('/album')}>
                         <h4 className="card-label neon-text-pink">ALBUM</h4>
                         <div className="card-content neon-text-white">순간을 기억할 찰나.</div>
                     </section>
 
                     {/* 3. Records */}
-                    <section className="glass-card">
+                    <section className="glass-card" onClick={() => navigate('/records')}>
                         <h4 className="card-label neon-text-pink">RECORDS</h4>
                         <div className="card-content neon-text-white">기억할 순간의 기록.</div>
                     </section>
 
                     {/* 4. Anniversary */}
-                    <section className="glass-card">
+                    <section className="glass-card" onClick={() => navigate('/anniversary')}>
                         <h4 className="card-label neon-text-pink">Anniv.</h4>
                         <div className="card-content neon-text-white">1년동안, 우리는.</div>
                     </section>
