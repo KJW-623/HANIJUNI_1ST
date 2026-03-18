@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hanijuni/static/css/main.0716864a.css",
-    "main.js": "/hanijuni/static/js/main.522a45dd.js",
-    "index.html": "/hanijuni/index.html",
-    "main.0716864a.css.map": "/hanijuni/static/css/main.0716864a.css.map",
-    "main.522a45dd.js.map": "/hanijuni/static/js/main.522a45dd.js.map"
+    "main.css": "/HANIJUNI_1ST/static/css/main.0716864a.css",
+    "main.js": "/HANIJUNI_1ST/static/js/main.c522bc76.js",
+    "index.html": "/HANIJUNI_1ST/index.html",
+    "main.0716864a.css.map": "/HANIJUNI_1ST/static/css/main.0716864a.css.map",
+    "main.c522bc76.js.map": "/HANIJUNI_1ST/static/js/main.c522bc76.js.map"
   },
   "entrypoints": [
     "static/css/main.0716864a.css",
-    "static/js/main.522a45dd.js"
+    "static/js/main.c522bc76.js"
   ]
 }
