@@ -2,7 +2,7 @@
   "name": "hanijuni",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KJW-623.github.io/HANIJUNI_1ST",
+  "homepage": "https://KJW-623.github.io/hanijuni",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
