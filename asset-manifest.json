@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HANIJUNI_1ST/static/css/main.0716864a.css",
-    "main.js": "/HANIJUNI_1ST/static/js/main.c522bc76.js",
+    "main.js": "/HANIJUNI_1ST/static/js/main.6d8c51d3.js",
     "index.html": "/HANIJUNI_1ST/index.html",
     "main.0716864a.css.map": "/HANIJUNI_1ST/static/css/main.0716864a.css.map",
-    "main.c522bc76.js.map": "/HANIJUNI_1ST/static/js/main.c522bc76.js.map"
+    "main.6d8c51d3.js.map": "/HANIJUNI_1ST/static/js/main.6d8c51d3.js.map"
   },
   "entrypoints": [
     "static/css/main.0716864a.css",
-    "static/js/main.c522bc76.js"
+    "static/js/main.6d8c51d3.js"
   ]
 }
