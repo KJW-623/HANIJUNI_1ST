@@ -1,31 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+/* 1. BrowserRouter 대신 HashRouter를 가져옵니다. */
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-// 1. 페이지 컴포넌트들을 모두 불러옵니다.
+// 페이지 컴포넌트 임포트
 import Intro from './pages/Intro/Intro';
 import Main from './pages/Main/Main';
 import Memories from './pages/Memories/Memories';
 import Album from './pages/Album/Album';
 import Records from './pages/Records/Records';
-import Anniv from './pages/Anniv/Anniv'; // 폴더명이 Anniv인 것 확인했습니다!
+import Anniv from './pages/Anniv/Anniv';
 
 function App() {
   return (
-    // basename 설정을 통해 GitHub Pages 배포 시에도 경로가 꼬이지 않게 합니다.
-    <Router basename={process.env.PUBLIC_URL}>
+    /* 2. HashRouter는 URL의 '#' 뒷부분을 읽기 때문에 
+      GitHub Pages에서 새로고침을 해도 404 에러가 발생하지 않습니다.
+      HashRouter 사용 시 basename 설정은 필요 없으므로 제거했습니다.)
+    */
+    <Router>
       <Routes>
         {/* 첫 접속 화면: 인트로 */}
         <Route path="/" element={<Intro />} />
-        
+
         {/* 메인 대시보드 */}
         <Route path="/main" element={<Main />} />
-        
-        {/* 서브 페이지들: 이제 '준비중' 대신 실제 파일을 보여줍니다. */}
+
+        {/* 서브 페이지들 */}
         <Route path="/memories" element={<Memories />} />
         <Route path="/album" element={<Album />} />
         <Route path="/records" element={<Records />} />
-        
-        {/* 메인에서 Anniversary 클릭 시 /anniversary로 이동하게 짰으므로 경로 유지 */}
+
+        {/* 기념일 편지 페이지 */}
         <Route path="/anniversary" element={<Anniv />} />
       </Routes>
     </Router>
